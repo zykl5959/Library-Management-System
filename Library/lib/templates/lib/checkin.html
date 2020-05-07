@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container">
+
+        <form action="result/" method="post">
+            {% csrf_token %}
+          <div class="form-group">
+            <label>BOOKS.book_id, BORROWER.card_no, and/or any substring of BORROWER name</label>
+            <input class="form-control" name="text" placeholder="BOOKS.book_id, BORROWER.card_no, and/or any substring of BORROWER name">
+              <small  class="form-text text-muted">We'll never share your message with anyone else.</small>
+          </div>
+           <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="BOOKS.book_id">
+              <label class="form-check-label" for="inlineRadio1">BOOKS.book_id</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="BORROWER.card_no">
+              <label class="form-check-label" for="inlineRadio2">BORROWER.card_no</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="BORROWER name" >
+              <label class="form-check-label" for="inlineRadio3">BORROWER name </label>
+            </div>
+            <br>
+            <button style="float: left" type="submit" class="btn btn-primary">Submit</button>
+            <a style="float: right" href="../" class="btn btn-primary " role="button" aria-pressed="true">Back</a>
+        </form>
+
+
+    </div>
+</body>
+</html>

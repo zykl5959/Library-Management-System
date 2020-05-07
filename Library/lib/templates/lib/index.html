@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+    <div class = "page-header">
+    <h1>
+      Library Management System
+      <small>Version 1.0</small>
+    </h1>
+    </div>
+
+        {% if messages %}
+        <ul class="messages" style="color:red">
+            {% for message in messages %}
+             <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+    <div class="list-group">
+        <a href="search" class="list-group-item list-group-item-action ">Search book and check out</a>
+        <a href="checkin" class="list-group-item list-group-item-action">Check in</a>
+        <a href="createborrower" class="list-group-item list-group-item-action">create new borrowers</a>
+        <a href="updatefine" class="list-group-item list-group-item-action">Update Fine</a>
+        <a href="showfine" class="list-group-item list-group-item-action">Show Fine and make payment</a>
+    </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+    <body>
+    {% if books %}
+        <table class="table table-sm table-striped">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">Title</th>
+              <th scope="col">ISBN</th>
+              <th scope="col">Author</th>
+              <th scope="col">Availability</th>
+                <th scope="col">Checkout</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for book ,author,isAvail in total %}
+            <tr>
+              <td>{{book.title}}</td>
+              <td>{{book.ISBN}}</td>
+              <td>{{author}}</td>
+                <td>{{isAvail}}</td>
+                <td><a href="{{book.id}}/checkout" class="btn btn-primary ">CheckOut</a></td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+    {% else %}
+        <p>No Books are available.</p>
+    {% endif %}
+    <a style="float: right; position:absolute;right: 15px" href="../" class="btn btn-primary " role="button" aria-pressed="true">Back</a>
+
+    </body>
+    <!--<script>-->
+
+
+
+    <!--// function p1_receive_func(data) {-->
+    <!--//     var op = document.createElement("option");-->
+    <!--//     op.innerHTML = data;-->
+    <!--//     op.setAttribute("selected","selected");-->
+    <!--//     document.getElementById("i1").appendChild(op);-->
+    <!--// }-->
+    <!--</script>-->
+</html>

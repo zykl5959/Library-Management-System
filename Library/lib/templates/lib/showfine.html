@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+    <body>
+    <div class="container">
+    {% if total2 %}
+    <h2>Show Fine for ench Card_id</h2>
+    <table class="table table-sm table-striped">
+          <thead class="thead-light">
+            <tr>
+              <!--<th scope="col">FINE_ID</th>-->
+              <th scope="col">FINE AMOUNT NOT PAY YET</th>
+              <th scope="col">Card_ID</th>
+                <th scope="col">Borrower Name</th>
+                <th scope="col">Make payment</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for book_loan2,card_id,amount in total2  %}
+            <tr>
+              <!--<th scope="row">{{f.id}}</th>-->
+              <td>{{amount}}</td>
+                <td>{{card_id}}</td>
+                <td>{{book_loan2.Card_id.Bname}}</td>
+                <td><a href="{{card_id}}/makepaymentbycardid" class="btn btn-primary ">Pay</a></td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+    {% else %}
+        <p>No Fines are available.</p>
+    {% endif %}
+
+    <h2>Show all Fines one by one</h2>
+    {% if total %}
+        <table class="table table-sm table-striped">
+          <thead  class="thead-light">
+            <tr>
+              <th scope="col">FINE AMOUNT</th>
+              <th scope="col">Card_id</th>
+                <th scope="col">Borrower Name</th>
+                <th scope="col">Loan_id</th>
+                <th scope="col">Make payment</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for f,book_loan in total %}
+            <tr>
+              <!--<th scope="row">{{f.id}}</th>-->
+              <td>{{f.Fine_amt}}</td>
+                <td>{{book_loan.Card_id_id}}</td>
+                <td>{{book_loan.Card_id.Bname}}</td>
+                <td>{{f.Loan_id_id}}</td>
+                <td><a href="{{f.Loan_id_id}}/makepaymentbyloanid" class="btn btn-primary ">Pay</a></td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+    {% else %}
+        <p>No Fines are available.</p>
+    {% endif %}
+    <a style="float: right" href=".." class="btn btn-primary " role="button" aria-pressed="true">Back</a>
+    </div>
+    </body>
+</html>

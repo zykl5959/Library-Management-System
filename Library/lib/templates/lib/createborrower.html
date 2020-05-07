@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<title>Create new Borrower</title>
+</head>
+<body>
+
+    <div class="container">
+      <h1>Create new Borrower</h1>
+    <form action="newborrower" method="post">
+        {% csrf_token %}
+          <div class="alert alert-primary">
+            Write your 9 digits SSN like <strong>976-95-2914</strong>
+        </div>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="SSN" name="ssn">
+      </div>
+        <div class="alert alert-primary">
+            Write your name like : FirstName,LastName <strong>Yi,Zheng</strong>
+        </div>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="FirstName,LastName" name="name">
+      </div>
+        <div class="alert alert-primary">
+           Write your Address like: <strong>3 Magdeline Terrace,Plano,TX</strong>
+        </div>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Address" name="address">
+        </div>
+        <div class="alert alert-primary">
+           Write your phone like : <strong>(469)-213-2549</strong>
+        </div>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Phone" name="phone">
+        </div>
+        <button class="btn btn-primary" type="submit">Create new Borrower</button>
+        <a style="float: right" href="/" class="btn btn-primary " role="button" aria-pressed="true">Back</a>
+    </form>
+    </div>
+
+</body>
+</html>

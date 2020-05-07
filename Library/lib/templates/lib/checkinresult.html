@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    {% if book_loan %}
+        <form action="checkinfinish/" method="post">
+        <table class="table table-sm table-striped">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">Book_LOANid</th>
+              <th scope="col">DateOut</th>
+              <th scope="col">DueDate</th>
+              <th scope="col">Card_id</th>
+                <th scope="col">BOOK_ID</th>
+                <th scope="col">Checkin</th>
+            </tr>
+          </thead>
+          <tbody>
+              {% csrf_token %}
+          {% for book_loansub in book_loan %}
+            <tr>
+                <td>{{book_loansub.id}}</td>
+                <td>{{book_loansub.Date_out}}</td>
+                <td>{{book_loansub.Due_date}}</td>
+                <td>{{book_loansub.Card_id_id}}</td>
+                <td>{{book_loansub.ISBN_id}}</td>
+                <td><input type="checkbox" name="book_id" value="{{book_loansub.ISBN_id}}" lay-skin="primary" lay-filter="allChoose"></td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+    {% else %}
+        <p>No Books are available.</p>
+    {% endif %}
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a style="float: right" href=".." class="btn btn-primary " role="button" aria-pressed="true">Back</a>
+    </form>
+</body>
+</html>

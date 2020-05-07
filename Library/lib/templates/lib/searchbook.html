@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container">
+
+        <form action="result/" method="post">
+            {% csrf_token %}
+          <div class="form-group">
+            <label>Enter the ISBN, title, and or Author(s)</label>
+            <input class="form-control" name="text" placeholder="Enter Enter the ISBN, title, and or Author(s)">
+            <small  class="form-text text-muted">We'll never share your message with anyone else.</small>
+          </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a style="float: right" href="../" class="btn btn-primary " role="button" aria-pressed="true">Back</a>
+        </form>
+
+    </div>
+</body>
+</html>

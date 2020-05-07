@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="alert alert-success">
+            You are checking out for Book  <strong> {{book.title}}</strong>
+        </div>
+    <form method="post" action="../checkoutresult/">
+        {% csrf_token %}
+          <div class="alert alert-primary">
+               Please enter your Card ID.
+          </div>
+        <input type="text" name="card_id">
+        <button class="btn btn-primary" type="submit">Submit</button>
+        <a style="float: right" href="../../../" class="btn btn-primary " role="button" aria-pressed="true">Back</a>
+    </form>
+    </div>
+
+
+
+</body>
+</html>
